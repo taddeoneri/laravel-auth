@@ -16,7 +16,7 @@
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Title</th>
-        <th scope="col">Image</th>
+        {{-- <th scope="col">Image</th> --}}
         <th scope="col">Created</th>
         <th scope="col">Actions</th>
       </tr>
@@ -29,9 +29,9 @@
             {{-- <td><img class="img-thumbnail" style="width:100px" src="{{ $post->image }}" alt="{{ $post->title }}"></td> --}}
             <td>{{ $project->created_at }}</td>
             <td>
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
                     <a href="{{ route('admin.projects.show', $project->slug) }}" class="btn btn-primary text-white"><i class="fa-solid fa-eye"></i></a>
-                    <a href="{{ route('admin.projects.edit', $project->slug) }}" class="btn btn-warning text-white"><i class="fa-solid fa-pencil"></i></a>
+                    <a href="{{ route('admin.projects.edit', $project->slug) }}" class="btn btn-warning text-white mx-5"><i class="fa-solid fa-pencil"></i></a>
                     <form action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
                         @csrf
                         @method('DELETE')
