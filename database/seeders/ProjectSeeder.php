@@ -22,7 +22,7 @@ class ProjectSeeder extends Seeder
             $newProject->title = $project['title'];
             $newProject->slug = Str::slug($project['title'], '-');
             $newProject->image = $project['image'];
-            $newProject->body = $project['description'];
+            $newProject->description = $project['description'];
             $newProject->save();
         }
     }
